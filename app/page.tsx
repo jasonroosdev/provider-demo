@@ -1,95 +1,71 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+import React from "react";
+import styled from "styled-components";
+import "./global.css";
+import TabList, { Tab } from "../components/common/TabList";
+import Level1 from "../components/Level1";
+import Level2 from "../components/Level2";
+import Level3 from "../components/Level3";
+import Level4 from "../components/Level4";
+import Level5 from "../components/Level5";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const Container = styled.div`
+  padding: 0 5rem;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+`;
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+const Title = styled.h1`
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+  text-align: center;
+`;
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+const Description = styled.h2`
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1rem;
+`;
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+const Attribution = styled.h3`
+  text-align: center;
+  line-height: 0.8;
+  font-size: 1rem;
+`;
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+const Header = styled.header`
+  padding: 1rem 0;
+  white-space: nowrap;
+  text-align: center;
+`;
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+const Home = () => (
+  <Container>
+    <Header>
+      <Title>React Context API</Title>
+      <Description>A Progressive Demonstration of Advanced Usage</Description>
+      <Attribution>By Jason Roos</Attribution>
+    </Header>
+    <TabList>
+      <Tab title="Level 1">
+        <Level1 />
+      </Tab>
+      <Tab title="Level 2">
+        <Level2 />
+      </Tab>
+      <Tab title="Level 3">
+        <Level3 />
+      </Tab>
+      <Tab title="Level 4">
+        <Level4 />
+      </Tab>
+      <Tab title="Level 5">
+        <Level5 />
+      </Tab>
+    </TabList>
+  </Container>
+);
+
+export default Home;
